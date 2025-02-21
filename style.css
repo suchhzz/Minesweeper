@@ -1,0 +1,256 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+table {
+    border-collapse: collapse;
+    width: auto;
+    table-layout: fixed;
+}
+
+th,
+td {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+thead {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody td:hover {
+    filter: brightness(0.9);
+}
+
+td.flag {
+    position: relative;
+}
+
+td.flag::after {
+    content: "\f024";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: red;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+td.flag-question {
+    position: relative;
+}
+
+td.flag-question::after {
+    content: "\f024 \f128";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: red;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.relative-container {
+    position: relative;
+}
+
+.info-field {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.info-field.active {
+    display: block;
+}
+
+.info-field-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.info-text {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.buttons-wrapper {
+    margin-top: 15px;
+}
+
+.buttons-wrapper button {
+    background: linear-gradient(135deg, #145a32, #0e3d24);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(20, 90, 50, 0.4);
+    text-transform: uppercase;
+    transition: 0.3s ease-out;
+}
+
+.buttons-wrapper button:hover {
+    background: linear-gradient(135deg, #0e3d24, #09291a);
+    box-shadow: 0 6px 15px rgba(20, 90, 50, 0.6);
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+td.bomb {
+    background-color: #d32f2f;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+}
+
+td.bomb::before {
+    content: "\f1e2";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+td.value {
+    background-color: #ffcc80;
+}
+
+td.empty {
+    background-color: #c8e6c9;
+}
+
+.text-interface {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #333;
+    transform: translate(-50%, -50%);
+}
+
+.text-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.text-item p {
+    margin: 0;
+}
+
+.text-item p:first-child {
+    font-weight: bold;
+    color: #555;
+}
+
+#flagsCountInterafce,
+#bombsCountInterafce {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1976d2;
+    padding: 2px 6px;
+    border-radius: 5px;
+    background-color: #e3f2fd;
+}
+
+.button-interface {
+    display: none;
+    position: fixed;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+}
+
+.button-interface.active {
+    display: flex;
+}
+
+.play-again-button {
+    background-color: #388e3c;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.play-again-button:hover {
+    background-color: #2c6e1f;
+    transform: scale(1.05);
+}
+
+.play-again-button:active {
+    transform: scale(1);
+}
+
+@media (max-width: 500px) {
+    td {
+        width: 40px;
+        height: 40px;
+    }
+}
